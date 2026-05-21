@@ -2,68 +2,93 @@
 <html>
 <head>
 <title>Infinity Castle movie</title>
-
 <style>
 body {
   background-color: black;
-  font-family: "Comic Sans MS", cursive, sans-serif; /* Fallbacks added for safety */
+  font-family: "Comic Sans MS", cursive, sans-serif;
   margin: 0;
   padding: 20px;
 }
-
 .section {
-  max-width: 800px;      /* Keeps the text from stretching too wide on big screens */
-  margin: 0 auto;        /* Centers the whole page content */
+  max-width: 800px;
+  margin: 0 auto;
   padding: 20px;
   font-size: 20px;
   color: blue;
-  text-align: center;    /* Centers the main heading and content smoothly */
+  text-align: center;
 }
-
 header {
-  margin-bottom: 40px;   /* Fixed: Removed invalid 'blue' text */
-  padding-bottom: 15px;  /* Fixed: Removed invalid 'blue' text */
+  margin-bottom: 40px;
+  padding-bottom: 15px;
   border-bottom: 2px solid red;
   color: red;
   text-align: center;
   background-color: blue;
   font-size: 45px;
-} /* Fixed: Added missing closing brace */
-
-/* Fixed: Changed 'iframe' to 'video' and used 'margin: auto' to center it */
-video {
-  border: 4px solid red; /* Made it a bit thicker so it pops against the green */
-  border-radius: 30px;   /* Slightly adjusted so the corners don't cut off the video controls */
-  display: block;
-  margin: 24px auto;     /* Perfectly centers the video player horizontally */
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* Adds a subtle shadow to make it lift off the page */
 }
-
+video {
+  border: 4px solid red;
+  border-radius: 30px;
+  display: block;
+  margin: 24px auto;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
 p { 
   text-align: center;
-  line-height: 1.5;      /* Adds a little breathing room between lines of text */
+  line-height: 1.5;
 }
-
 hr {
   border: 0;
   height: 2px;
   background-color: red; 
   margin: 30px 0;
 }
-
 footer {
-  margin-top: 50px;       /* Pushes the footer down away from your text */
+  margin-top: 50px;
   padding: 15px;
-  font-size: 16px;        /* Slightly smaller than your main text */
-  color: darkred;         /* Keeps with your colorful theme */
-  border-top: 20px solid red; /* Adds a clean, thin line right above it */
+  font-size: 16px;
+  color: darkred;
+  border-top: 20px solid red;
+}
+
+/* Chainsaw Man accordion */
+.csm-toggle {
+  background-color: #1a0000;
+  color: red;
+  border: 3px solid red;
+  border-radius: 12px;
+  padding: 14px 28px;
+  font-family: "Comic Sans MS", cursive;
+  font-size: 20px;
+  cursor: pointer;
+  display: block;
+  margin: 10px auto 0;
+  transition: background-color 0.2s;
+}
+.csm-toggle:hover {
+  background-color: #3a0000;
+}
+.csm-arrow {
+  display: inline-block;
+  transition: transform 0.4s ease;
+  margin-left: 10px;
+}
+.csm-toggle.open .csm-arrow {
+  transform: rotate(180deg);
+}
+.csm-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.7s ease;
+}
+.csm-content.open {
+  max-height: 9999px;
 }
 </style>
-
 </head>
 
 <body>
-<header> Your welcome for bringing this peak to you</header>
+<header>Your welcome for bringing this peak to you</header>
 
 <div class="section">
   <h3>Here is the peak movie, Demon slayer Infinity Castle</h3>
@@ -72,68 +97,77 @@ footer {
     <source src="https://cdn4.videas.fr/aacacfb2955a48bbb3d160371b9aed12/demon-slayer-infinity-castle-dub-mp4-source.mp4?sig=b0b1d03162ad03e9627145826313a30b1db9f8eae0020207896459c0992f4be4:1wPPil:BUwO9hqmmEdmXs3_8xKJnuyuHGDA9n8GD37TJ0RpQ5M" type="video/mp4">
     Your browser does not support the video tag.
   </video>
+
   <p>As the Demon Slayer Corps members and Hashira engaged in a group strength training program, the Hashira Training, in preparation for the forthcoming battle against the demons, Muzan Kibutsuji appears at the Ubuyashiki Mansion. With the head of the Demon Corps in danger, Tanjiro and the Hashira rush to the headquarters but are plunged into a deep descent to a mysterious space by the hands of Muzan Kibutsuji. The destination of where Tanjiro and Demon Slayer Corps have fallen is the demons' stronghold - the Infinity Castle. And so, the battleground is set as the final battle between the Demon Slayer Corps and the demons ignites.</p>
+
   <hr>
 
-  <p> Also chainsaw man episode 6.</p>
+  <button class="csm-toggle" onclick="toggleCSM(this)">
+    🔪 Chainsaw Man Episodes <span class="csm-arrow">▼</span>
+  </button>
 
+  <div class="csm-content" id="csm-content">
 
-  <video width="640" height="360" controls>
-    <source src="https://eng.cartoonsarea.cc/USER-DATA/Cartoonsarea/English/C/Chainsaw%20Man/Season%201/Episode%206//06%20Kill%20Denji.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-    
-  <hr>
- <p> Also chainsaw man episode 7.</p>
-  <video width="640" height="360" controls>
-    <source src="https://eng.cartoonsarea.cc/USER-DATA/Cartoonsarea/English/C/Chainsaw%20Man/Season%201/Episode%207//07%20The%20Taste%20of%20a%20Kiss.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-  
-  <hr>
- <p> Also chainsaw man episode 8.</p>
-  <video width="640" height="360" controls>
-    <source src="https://eng.cartoonsarea.cc/USER-DATA/Cartoonsarea/English/C/Chainsaw%20Man/Season%201/Episode%208//08%20Gunfire.mp4">
-    Your browser does not support the video tag.
-  </video>
-  
+    <p>Chainsaw Man episode 6</p>
+    <video width="640" height="360" controls>
+      <source src="https://eng.cartoonsarea.cc/USER-DATA/Cartoonsarea/English/C/Chainsaw%20Man/Season%201/Episode%206//06%20Kill%20Denji.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
     <hr>
- <p> Also chainsaw man episode 9.</p>
-  <video width="640" height="360" controls>
-    <source src="https://eng.cartoonsarea.cc/USER-DATA/Cartoonsarea/English/C/Chainsaw%20Man/Season%201/Episode%209//09%20From%20Kyoto.mp4">
-    Your browser does not support the video tag.
-  </video>
-  
-     <hr>
- <p> Also chainsaw man episode 10.</p>
-  <video width="640" height="360" controls>
-    <source src="https://eng.cartoonsarea.cc/USER-DATA/Cartoonsarea/English/C/Chainsaw%20Man/Season%201/Episode%2010//10%20Bruised%20and%20Battered.mp4">
-    Your browser does not support the video tag.
-  </video>
-  
-  
-  
-     <hr>
- <p> Also chainsaw man episode 11.</p>
-  <video width="640" height="360" controls>
-    <source src="https://eng.cartoonsarea.cc/USER-DATA/Cartoonsarea/English/C/Chainsaw%20Man/Season%201/Episode%2011//11%20Mission%20Start.mp4">
-    Your browser does not support the video tag.
-  </video>
-  
-     <hr>
- <p> Also chainsaw man episode 12.</p>
-  <video width="640" height="360" controls>
-    <source src="https://eng.cartoonsarea.cc/USER-DATA/Cartoonsarea/English/C/Chainsaw%20Man/Season%201/Episode%2012//12%20Katana%20vs.%20Chainsaw.mp4">
-    Your browser does not support the video tag.
-  </video>
-  
-  
-  
+    <p>Chainsaw Man episode 7</p>
+    <video width="640" height="360" controls>
+      <source src="https://eng.cartoonsarea.cc/USER-DATA/Cartoonsarea/English/C/Chainsaw%20Man/Season%201/Episode%207//07%20The%20Taste%20of%20a%20Kiss.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <hr>
+    <p>Chainsaw Man episode 8</p>
+    <video width="640" height="360" controls>
+      <source src="https://eng.cartoonsarea.cc/USER-DATA/Cartoonsarea/English/C/Chainsaw%20Man/Season%201/Episode%208//08%20Gunfire.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <hr>
+    <p>Chainsaw Man episode 9</p>
+    <video width="640" height="360" controls>
+      <source src="https://eng.cartoonsarea.cc/USER-DATA/Cartoonsarea/English/C/Chainsaw%20Man/Season%201/Episode%209//09%20From%20Kyoto.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <hr>
+    <p>Chainsaw Man episode 10</p>
+    <video width="640" height="360" controls>
+      <source src="https://eng.cartoonsarea.cc/USER-DATA/Cartoonsarea/English/C/Chainsaw%20Man/Season%201/Episode%2010//10%20Bruised%20and%20Battered.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <hr>
+    <p>Chainsaw Man episode 11</p>
+    <video width="640" height="360" controls>
+      <source src="https://eng.cartoonsarea.cc/USER-DATA/Cartoonsarea/English/C/Chainsaw%20Man/Season%201/Episode%2011//11%20Mission%20Start.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <hr>
+    <p>Chainsaw Man episode 12</p>
+    <video width="640" height="360" controls>
+      <source src="https://eng.cartoonsarea.cc/USER-DATA/Cartoonsarea/English/C/Chainsaw%20Man/Season%201/Episode%2012//12%20Katana%20vs.%20Chainsaw.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+  </div>
 </div>
 
 <footer>
   <p>&copy; 2026 Demon Slayer Fan Page. All rights reserved.</p>
 </footer>
 
+<script>
+function toggleCSM(btn) {
+  btn.classList.toggle('open');
+  document.getElementById('csm-content').classList.toggle('open');
+}
+</script>
 </body>
 </html>
