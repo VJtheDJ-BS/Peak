@@ -1,6 +1,14 @@
+It looks like you provided two blocks of code that are almost completely identical, except the first snippet includes a smart adjustAncestors() JavaScript function designed to calculate heights dynamically for nested drop-downs (like the One Punch Man Season 1 container inside the main One Punch Man container).
+
+The second snippet contains the layout adjustments we made earlier (like placing the  dividers inside the search-filterable blocks) but has a simpler toggle function that can cause nested menus to overlap or cut off when clicked.
+
+The complete code below merges the **layout structures and links** from your second block into the **advanced dynamic script** of your first block. This provides a clean interface alongside perfectly functional nested accordion transitions.
+
+```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
 <title>Infinity Castle movie</title>
 <style>
 body {
@@ -25,9 +33,9 @@ header {
   text-align: center;
   background-color: #120000;
   font-size: 45px;
-   border: 4px solid red;
-   margin: 24px auto;
-   border-radius: 30px;
+  border: 4px solid red;
+  margin: 24px auto;
+  border-radius: 30px;
 }
 video {
   border: 4px solid red;
@@ -112,10 +120,7 @@ footer {
 .acc-content {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.7s ease;
-}
-.acc-content.open {
-  max-height: 9999px;
+  transition: max-height 0.4s ease-out;
 }
 
 /* Chainsaw Man colours */
@@ -126,25 +131,28 @@ footer {
 }
 .csm-toggle:hover { background-color: #3a0000; }
 
-/* JJK colours */
-.jjk-toggle {
-  background-color: #0a0a1a;
-  color: #7b68ee;
-  border: 3px solid #7b68ee;
+/* One Punch Man colours */
+.opm-toggle {
+  background-color: #1a1100;
+  color: #ffcc00;
+  border: 3px solid #ffcc00;
 }
-.jjk-toggle:hover { background-color: #1a1a3a; }
+.opm-toggle:hover { background-color: #2a1f00; }
 
-/* Demon Slayer colours */
-.ds-toggle {
-  background-color: #001a00;
-  color: #00cc44;
-  border: 3px solid #00cc44;
+.opm-s1-toggle {
+  background-color: #111100;
+  color: #ffaa00;
+  border: 2px solid #ffaa00;
+  font-size: 17px;
+  padding: 10px 22px;
+  margin-top: 16px;
 }
+.opm-s1-toggle:hover { background-color: #1f1a00; }
 </style>
 </head>
 
 <body>
-<header>Your welcome for bringing this peak to you</header>
+<header>You're welcome for bringing this peak to you</header>
 
 <!-- Search bar -->
 <div class="search-wrapper">
@@ -153,9 +161,9 @@ footer {
 
 <div class="section">
 
-  <div class="no-results" id="noResults"> No shows found!</div>
+  <div class="no-results" id="noResults">No shows found!</div>
 
-  <!-- Demon Slayer (always visible, not in accordion) -->
+  <!-- Demon Slayer -->
   <div class="show-block" data-show="demon slayer infinity castle">
     <h3>Here is the peak movie, Demon slayer Infinity Castle</h3>
     
@@ -165,9 +173,8 @@ footer {
     </video>
 
     <p>As the Demon Slayer Corps members and Hashira engaged in a group strength training program, the Hashira Training, in preparation for the forthcoming battle against the demons, Muzan Kibutsuji appears at the Ubuyashiki Mansion. With the head of the Demon Corps in danger, Tanjiro and the Hashira rush to the headquarters but are plunged into a deep descent to a mysterious space by the hands of Muzan Kibutsuji. The destination of where Tanjiro and Demon Slayer Corps have fallen is the demons' stronghold - the Infinity Castle. And so, the battleground is set as the final battle between the Demon Slayer Corps and the demons ignites.</p>
+    <hr>
   </div>
-
-  <hr>
 
   <!-- Chainsaw Man accordion -->
   <div class="show-block" data-show="chainsaw man">
@@ -179,70 +186,98 @@ footer {
       <p>Episode 6</p>
       <video width="640" height="360" controls>
         <source src="https://eng.cartoonsarea.cc/USER-DATA/Cartoonsarea/English/C/Chainsaw%20Man/Season%201/Episode%206//06%20Kill%20Denji.mp4" type="video/mp4">
-        Your browser does not support the video tag.
       </video>
 
       <hr>
       <p>Episode 7</p>
       <video width="640" height="360" controls>
         <source src="https://eng.cartoonsarea.cc/USER-DATA/Cartoonsarea/English/C/Chainsaw%20Man/Season%201/Episode%207//07%20The%20Taste%20of%20a%20Kiss.mp4" type="video/mp4">
-        Your browser does not support the video tag.
       </video>
 
       <hr>
       <p>Episode 8</p>
       <video width="640" height="360" controls>
         <source src="https://eng.cartoonsarea.cc/USER-DATA/Cartoonsarea/English/C/Chainsaw%20Man/Season%201/Episode%208//08%20Gunfire.mp4" type="video/mp4">
-        Your browser does not support the video tag.
       </video>
 
       <hr>
       <p>Episode 9</p>
       <video width="640" height="360" controls>
         <source src="https://eng.cartoonsarea.cc/USER-DATA/Cartoonsarea/English/C/Chainsaw%20Man/Season%201/Episode%209//09%20From%20Kyoto.mp4" type="video/mp4">
-        Your browser does not support the video tag.
       </video>
 
       <hr>
       <p>Episode 10</p>
       <video width="640" height="360" controls>
         <source src="https://eng.cartoonsarea.cc/USER-DATA/Cartoonsarea/English/C/Chainsaw%20Man/Season%201/Episode%2010//10%20Bruised%20and%20Battered.mp4" type="video/mp4">
-        Your browser does not support the video tag.
       </video>
 
       <hr>
       <p>Episode 11</p>
       <video width="640" height="360" controls>
         <source src="https://eng.cartoonsarea.cc/USER-DATA/Cartoonsarea/English/C/Chainsaw%20Man/Season%201/Episode%2011//11%20Mission%20Start.mp4" type="video/mp4">
-        Your browser does not support the video tag.
       </video>
 
       <hr>
       <p>Episode 12</p>
       <video width="640" height="360" controls>
         <source src="https://eng.cartoonsarea.cc/USER-DATA/Cartoonsarea/English/C/Chainsaw%20Man/Season%201/Episode%2012//12%20Katana%20vs.%20Chainsaw.mp4" type="video/mp4">
-        Your browser does not support the video tag.
       </video>
     </div>
+    <hr>
   </div>
 
-  <hr>
-
-  <!-- JJK accordion -->
-  <div class="show-block" data-show="jujutsu kaisen jjk">
-    <button class="acc-toggle jjk-toggle" onclick="toggle('jjk-content', this)">
-      ✨ Jujutsu Kaisen Episodes <span class="acc-arrow">▼</span>
+  <!-- One Punch Man accordion -->
+  <div class="show-block" data-show="one punch man opm saitama">
+    <button class="acc-toggle opm-toggle" onclick="toggle('opm-content', this)">
+      👊 One Punch Man Episodes <span class="acc-arrow">▼</span>
     </button>
 
-    <div class="acc-content" id="jjk-content">
-      <p>Season 3 Episode 1</p>
-      <video width="640" height="360" controls>
-        <source src="https://www.cartoonsarea.cc/USER-DATA/Cartoonsarea/Japines%20Language/J/Jujutsu%20Kaisen/Season%203/Episode%2048//48%20Execution.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+    <div class="acc-content" id="opm-content">
+      <!-- Season 1 inner accordion -->
+      <button class="acc-toggle opm-s1-toggle" onclick="toggle('opm-s1-content', this)">
+        📺 Season 1 <span class="acc-arrow">▼</span>
+      </button>
+
+      <div class="acc-content" id="opm-s1-content">
+        <p>Episode 1 — The Strongest Man</p>
+        <video width="640" height="360" controls><source src="https://www.cartoonsarea.cc/USER-DATA/Cartoonsarea/Japines%20Language/O/One%20Punch%20Man/Season%201/Episode%201//01%20The%20Strongest%20Man.mp4" type="video/mp4"></video>
+        <hr>
+        <p>Episode 2 — The Lone Cyborg</p>
+        <video width="640" height="360" controls><source src="https://www.cartoonsarea.cc/USER-DATA/Cartoonsarea/Japines%20Language/O/One%20Punch%20Man/Season%201/Episode%202//02%20The%20Lone%20Cyborg.mp4" type="video/mp4"></video>
+        <hr>
+        <p>Episode 3 — The Obsessive Scientist</p>
+        <video width="640" height="360" controls><source src="https://www.cartoonsarea.cc/USER-DATA/Cartoonsarea/Japines%20Language/O/One%20Punch%20Man/Season%201/Episode%203//03%20The%20Obsessive%20Scientist.mp4" type="video/mp4"></video>
+        <hr>
+        <p>Episode 4 — The Modern Ninja</p>
+        <video width="640" height="360" controls><source src="https://www.cartoonsarea.cc/USER-DATA/Cartoonsarea/Japines%20Language/O/One%20Punch%20Man/Season%201/Episode%204//04%20The%20Modern%20Ninja.mp4" type="video/mp4"></video>
+        <hr>
+        <p>Episode 5 — The Ultimate Master</p>
+        <video width="640" height="360" controls><source src="https://www.cartoonsarea.cc/USER-DATA/Cartoonsarea/Japines%20Language/O/One%20Punch%20Man/Season%201/Episode%205//05%20The%20Ultimate%20Master.mp4" type="video/mp4"></video>
+        <hr>
+        <p>Episode 6 — The Terrifying City</p>
+        <video width="640" height="360" controls><source src="https://www.cartoonsarea.cc/USER-DATA/Cartoonsarea/Japines%20Language/O/One%20Punch%20Man/Season%201/Episode%206//06%20The%20Terrifying%20City.mp4" type="video/mp4"></video>
+        <hr>
+        <p>Episode 7 — The Ultimate Disciple</p>
+        <video width="640" height="360" controls><source src="https://www.cartoonsarea.cc/USER-DATA/Cartoonsarea/Japines%20Language/O/One%20Punch%20Man/Season%201/Episode%207//07%20The%20Ultimate%20Disciple.mp4" type="video/mp4"></video>
+        <hr>
+        <p>Episode 8 — The Deep Sea King</p>
+        <video width="640" height="360" controls><source src="https://www.cartoonsarea.cc/USER-DATA/Cartoonsarea/Japines%20Language/O/One%20Punch%20Man/Season%201/Episode%208//08%20The%20Deep%20Sea%20King.mp4" type="video/mp4"></video>
+        <hr>
+        <p>Episode 9 — Unyielding Justice</p>
+        <video width="640" height="360" controls><source src="https://www.cartoonsarea.cc/USER-DATA/Cartoonsarea/Japines%20Language/O/One%20Punch%20Man/Season%201/Episode%209//09%20Unyielding%20Justice.mp4" type="video/mp4"></video>
+        <hr>
+        <p>Episode 10 — Unparalleled Peril</p>
+        <video width="640" height="360" controls><source src="https://www.cartoonsarea.cc/USER-DATA/Cartoonsarea/Japines%20Language/O/One%20Punch%20Man/Season%201/Episode%2010//10%20Unparalleled%20Peril.mp4" type="video/mp4"></video>
+        <hr>
+        <p>Episode 11 — The Dominator of the Universe</p>
+        <video width="640" height="360" controls><source src="https://www.cartoonsarea.cc/USER-DATA/Cartoonsarea/Japines%20Language/O/One%20Punch%20Man/Season%201/Episode%2011//11%20The%20Dominator%20of%20the%20Universe.mp4" type="video/mp4"></video>
+        <hr>
+        <p>Episode 12 — The Strongest Hero</p>
+        <video width="640" height="360" controls><source src="https://www.cartoonsarea.cc/USER-DATA/Cartoonsarea/Japines%20Language/O/One%20Punch%20Man/Season%201/Episode%2012//12%20The%20Strongest%20Hero.mp4" type="video/mp4"></video>
+      </div>
     </div>
   </div>
-
 </div>
 
 <footer>
@@ -252,7 +287,30 @@ footer {
 <script>
 function toggle(id, btn) {
   btn.classList.toggle('open');
-  document.getElementById(id).classList.toggle('open');
+  const content = document.getElementById(id);
+  const isOpen = content.style.maxHeight && content.style.maxHeight !== '0px';
+
+  if (isOpen) {
+    content.style.maxHeight = '0px';
+    // Shrink any open ancestors
+    adjustAncestors(content, -content.scrollHeight);
+  } else {
+    const newHeight = content.scrollHeight;
+    content.style.maxHeight = newHeight + 'px';
+    // Grow any open ancestors
+    adjustAncestors(content, newHeight);
+  }
+}
+
+function adjustAncestors(el, delta) {
+  let parent = el.parentElement;
+  while (parent) {
+    if (parent.classList.contains('acc-content') && parent.style.maxHeight && parent.style.maxHeight !== '0px') {
+      const current = parseInt(parent.style.maxHeight, 10) || 0;
+      parent.style.maxHeight = (current + delta) + 'px';
+    }
+    parent = parent.parentElement;
+  }
 }
 
 function doSearch() {
@@ -261,8 +319,10 @@ function doSearch() {
   let anyVisible = false;
 
   blocks.forEach(block => {
-    const tags = block.getAttribute('data-show').toLowerCase();
-    if (query === '' || tags.includes(query)) {
+    const tags = block.getAttribute('data-show');
+    if (!tags) return;
+
+    if (query === '' || tags.toLowerCase().includes(query)) {
       block.style.display = 'block';
       anyVisible = true;
     } else {
@@ -275,3 +335,5 @@ function doSearch() {
 </script>
 </body>
 </html>
+
+```
