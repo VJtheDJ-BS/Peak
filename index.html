@@ -1,10 +1,5 @@
-It looks like you provided two blocks of code that are almost completely identical, except the first snippet includes a smart adjustAncestors() JavaScript function designed to calculate heights dynamically for nested drop-downs (like the One Punch Man Season 1 container inside the main One Punch Man container).
 
-The second snippet contains the layout adjustments we made earlier (like placing the  dividers inside the search-filterable blocks) but has a simpler toggle function that can cause nested menus to overlap or cut off when clicked.
 
-The complete code below merges the **layout structures and links** from your second block into the **advanced dynamic script** of your first block. This provides a clean interface alongside perfectly functional nested accordion transitions.
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -154,7 +149,6 @@ footer {
 <body>
 <header>You're welcome for bringing this peak to you</header>
 
-<!-- Search bar -->
 <div class="search-wrapper">
   <input class="search-bar" type="text" id="searchInput" placeholder=" Search for some peak anime..." oninput="doSearch()">
 </div>
@@ -163,7 +157,6 @@ footer {
 
   <div class="no-results" id="noResults">No shows found!</div>
 
-  <!-- Demon Slayer -->
   <div class="show-block" data-show="demon slayer infinity castle">
     <h3>Here is the peak movie, Demon slayer Infinity Castle</h3>
     
@@ -176,7 +169,6 @@ footer {
     <hr>
   </div>
 
-  <!-- Chainsaw Man accordion -->
   <div class="show-block" data-show="chainsaw man">
     <button class="acc-toggle csm-toggle" onclick="toggle('csm-content', this)">
       🔪 Chainsaw Man Episodes <span class="acc-arrow">▼</span>
@@ -222,23 +214,22 @@ footer {
       <video width="640" height="360" controls>
         <source src="https://eng.cartoonsarea.cc/USER-DATA/Cartoonsarea/English/C/Chainsaw%20Man/Season%201/Episode%2012//12%20Katana%20vs.%20Chainsaw.mp4" type="video/mp4">
       </video>
+      
       <hr>
       <p>Reze Arc movie</p>
       <video width="640" height="360" controls>
-        <source src=" https://ia802809.us.archive.org/17/items/clideo-editor-38d894b623c440f0bbf4814d654492f5_me0PxF8f/clideo-editor-38d894b623c440f0bbf4814d654492f5_me0PxF8f.mp4
-    </div>" type="video/mp4">
+        <source src="https://ia802809.us.archive.org/17/items/clideo-editor-38d894b623c440f0bbf4814d654492f5_me0PxF8f/clideo-editor-38d894b623c440f0bbf4814d654492f5_me0PxF8f.mp4" type="video/mp4">
       </video>
+    </div>
     <hr>
   </div>
 
-  <!-- One Punch Man accordion -->
   <div class="show-block" data-show="one punch man opm saitama">
     <button class="acc-toggle opm-toggle" onclick="toggle('opm-content', this)">
       👊 One Punch Man Episodes <span class="acc-arrow">▼</span>
     </button>
 
     <div class="acc-content" id="opm-content">
-      <!-- Season 1 inner accordion -->
       <button class="acc-toggle opm-s1-toggle" onclick="toggle('opm-s1-content', this)">
         📺 Season 1 <span class="acc-arrow">▼</span>
       </button>
@@ -281,6 +272,7 @@ footer {
         <video width="640" height="360" controls><source src="https://www.cartoonsarea.cc/USER-DATA/Cartoonsarea/Japines%20Language/O/One%20Punch%20Man/Season%201/Episode%2012//12%20The%20Strongest%20Hero.mp4" type="video/mp4"></video>
       </div>
     </div>
+    <hr>
   </div>
 </div>
 
@@ -295,13 +287,14 @@ function toggle(id, btn) {
   const isOpen = content.style.maxHeight && content.style.maxHeight !== '0px';
 
   if (isOpen) {
+    const currentHeight = content.scrollHeight;
     content.style.maxHeight = '0px';
-    // Shrink any open ancestors
-    adjustAncestors(content, -content.scrollHeight);
+    // Shrink any open ancestors by the height removed
+    adjustAncestors(content, -currentHeight);
   } else {
     const newHeight = content.scrollHeight;
     content.style.maxHeight = newHeight + 'px';
-    // Grow any open ancestors
+    // Grow any open ancestors by the height added
     adjustAncestors(content, newHeight);
   }
 }
@@ -339,5 +332,3 @@ function doSearch() {
 </script>
 </body>
 </html>
-
-```
